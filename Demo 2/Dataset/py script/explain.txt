@@ -1,0 +1,51 @@
+The data in "ks - projecs 2016" have errors:
+there are commas in the project name and that making a shift in columns 
+
+so has to write a python script to remove those commas to separate columns coreect by comma 
+
+first wrote remove_q function to remove many qoutes and make it one single qoute 
+
+second wrote remove_comma function to remove all commas between project name
+
+---------------------------------------------------------------
+
+CSV Data Cleanup Script
+Overview
+This Python script cleans up malformed CSV data where:
+
+Unnecessary quotes (") cause parsing issues.
+
+Commas inside project names incorrectly split columns.
+
+The script processes a CSV file (test.csv) and outputs a cleaned version (test_3.csv).
+
+Problem Description
+The original dataset (ks-projecs 2016) contains errors:
+
+Excessive quotes: Multiple quotes (") disrupt CSV parsing.
+
+Commas in project names: These cause columns to shift when read by CSV tools.
+
+Solution
+Script Workflow
+remove_q(text)
+
+Converts text to a list for mutability.
+
+Replaces every 4th consecutive quote with a space to reduce clutter.
+
+Returns a string with simplified quotes.
+
+remove_comm(text)
+
+Processes each line of text.
+
+Removes commas between quotes (e.g., "Project, Name" → "Project Name").
+
+Uses a flag counter to identify quoted sections.
+
+File Handling
+
+Reads test.csv → cleans quotes → saves as test_2.csv.
+
+Reads test_2.csv → cleans commas → saves as test_3.csv.
